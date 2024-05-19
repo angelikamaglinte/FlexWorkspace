@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             if (response.ok) {
                 // Signup successful, redirect to login page
-                window.location.href = '/login'; // Redirect to login page
+                window.location.href = 'login.html'; // Redirect to login page
             } else {
                 // Signup failed, display error message
                 alert(data.msg);
