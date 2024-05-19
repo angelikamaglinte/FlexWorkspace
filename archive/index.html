@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlexWorkspace &mdash; Unlocking Your Potential in a Flexible Environment</title>
+    <link rel="icon" type="image/png" href="images/logos/FlexWorkspace-logo-only-black.png" id="smallIcon">
+    <!-- Styling -->
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <!-- Navigation Bar -->
+        <nav class="navigationBar">
+            <!-- Logo -->
+            <div class="navContainer">
+                <!-- Logo -->
+                <div><a href="#"><img src="images/logos/FlexWorkspace-logo-only-black.png" alt="FlexWorkspace Logo"
+                            id="flexworkspaceLogo"></a></div>
+                <div><a href="#"><span id="flexworkspace">FlexWorkspace</span></a></div>
+                <!-- Center Tabs -->
+                <div class="centerTabs">
+                    <!-- Workspaces -->
+                    <div class="workspaces">
+                        <div id="workspaces"><a href="">Workspaces</a></div>
+                    </div>
+                    <!-- Experiences -->
+                    <div class="experiences">
+                        <div id="experiences"><a href="">Experiences</a></div>
+                    </div>
+                </div>
+                <div class="rightmostTabs">
+                    <!-- Flex your space -->
+                    <div class="flexyourspace">
+                        <div id="flexyourspace"><a href="">Flex your space</a></div>
+                    </div>
+                    <!-- Work with us -->
+                    <div class="dropdown">
+                        <button class="dropdown-btn" onclick="toggleDropdown()">
+                            <i class="fa-solid fa-bars"></i>
+                            &nbsp;&nbsp;Work with us
+                        </button>
+                        <div class="dropdown-content" id="dropdown-content">
+                            <a href="#">Log In</a>
+                            <a href="#">Sign Up</a>
+                            <a href="#">Airbnb Your Home</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main class="mainContainer">
+        <section class="searchBarContainer">
+            <!-- Search Bar -->
+            <div class="searchBar">
+                <button class="btn">Where</button>
+                <button class="btn" id="">When</button>
+                <button class="btn">Who</button>
+                <button class="search-btn">
+                    <i class="fa-solid fa-magnifying-glass" id="search-magnifying-glass"></i>
+                </button>
+            </div>
+        </section>
+    </main>
+    <footer>
+
+    </footer>
+    <!-- Font Awesome Library -->
+    <script src="https://kit.fontawesome.com/e2ac5a529b.js" crossorigin="anonymous"></script>
+    <!-- Scripts -->
+    <script src="script/index.js"></script>
+
+</body>
+
+</html>

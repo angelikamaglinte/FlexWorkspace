@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animate.css Boilerplate</title>
+    <!-- Linking Animate.css via CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        /* Additional custom styles if needed */
+        .animated-element {
+            width: 200px;
+            height: 200px;
+            background-color: #f0f0f0;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 200px;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Animated element -->
+    <div class="animated-element animate__animated animate__bounce">Animate.css Example</div>
+
+    <!-- Trigger animation using JavaScript (optional) -->
+    <button onclick="animateElement()">Animate Element</button>
+
+    <script>
+        // JavaScript function to trigger animation
+        function animateElement() {
+            // Add animation class to the element
+            document.querySelector('.animated-element').classList.add('animate__animated', 'animate__heartBeat');
+        }
+    </script>
+</body>
+</html>
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Button with Drop Shadow on Hover</title>
+<style>
+    .button {
+        padding: 10px 20px;
+        background-color: #3498db;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: box-shadow 0.1s;
+        border-radius: 50px;
+    }
+    .button:hover {
+        box-shadow: 0px 2px 5px 0.5px rgba(0,0,0,0.3);
+    }
+</style>
+</head>
+<body>
+
+<button class="button">Hover over me</button>
+
+</body>
+</html> -->
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dropdown Button</title>
+<style>
+  /* Style the dropdown button */
+  .dropdown-btn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 10px 15px;
+  }
+
+  /* Style the dropdown content (hidden by default) */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+
+  /* Style the links inside the dropdown */
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+
+  /* Change color of dropdown links on hover */
+  .dropdown-content a:hover {
+    background-color: #ddd;
+  }
+</style>
+</head>
+<body>
+
+<div class="dropdown">
+  <button class="dropdown-btn" onclick="toggleDropdown()">Work with us</button>
+  <div class="dropdown-content" id="dropdown-content">
+    <a href="#">Log In</a>
+    <a href="#">Sign Up</a>
+    <a href="#">Airbnb Your Home</a>
+  </div>
+</div>
+
+<script>
+  // Toggle the dropdown menu visibility
+  function toggleDropdown() {
+    var dropdownContent = document.getElementById("dropdown-content");
+    if (dropdownContent.style.display === "block") {
+      dropdownContent.style.display = "none";
+    } else {
+      dropdownContent.style.display = "block";
+    }
+  }
+</script>
+
+</body>
+</html>
+
+ -->

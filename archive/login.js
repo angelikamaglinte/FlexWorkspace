@@ -3,7 +3,7 @@ document.getElementById("loginForm").addEventListener("submit", (event) => {
     const formData = new FormData(event.target);
     const data = Object.fromEntries(formData.entries());
     
-    fetch('http://localhost:7000/login', {
+    fetch('https://flexworkspace-server.onrender.com/login', {
         method: 'POST',
         body: JSON.stringify(data),
         headers: {
@@ -22,9 +22,9 @@ document.getElementById("loginForm").addEventListener("submit", (event) => {
         
         // Redirect user based on role
         if (data.role === 'owner') {
-            window.location.href = 'owner.html';
+            window.location.href = 'owner-page.html';
         } else if (data.role === 'coworker') {
-            window.location.href = 'coworker.html'; 
+            window.location.href = 'coworker-page.html'; 
         } else {
             // Handle other roles if needed
             console.error('Invalid role:', data.role);
