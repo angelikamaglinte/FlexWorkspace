@@ -10,10 +10,91 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
+    <!-- Styling -->
+    <link rel="stylesheet" href="css/navigation-bar.css">
+    <link rel="stylesheet" href="css/search-bar.css">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
-    <a href="signup.html">Work With Us</a>
+    <header>
+        <nav>
+            <div class="navigation-bar-container">
+                <!-- logo (left-most) -->
+                <div class="logo-container">
+                    <a href="#">
+                        <img src="images/logos/FlexWorkspace-black.png" alt="FlexWorkspace logo" id="FlexWorkspaceLogo">
+                    </a>
+                </div>
+                <!-- center tabs -->
+                <div class="center-tabs-container">
+                    <a href="#" id="workspaces-tab">Workspaces</a>
+                    <a href="experiences.html" id="experiences-tab">Experiences</a>
+                </div>
+                <!-- rightmost tabs -->
+                <div class="left-most-tabs-container">
+                    <a href="host.html" id="flex-your-space-tab">Flex Your Space</a>
+                    <a href="signup.html" id="work-with-us-tab">
+                        &nbsp;<i class="fa-solid fa-bars"></i>
+                        &nbsp;&nbsp;Work With Us</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- search bar -->
+        <!-- <div class="search-bar-container">
+            <form action="/search" method="get" class="search-bar-form">
+                <div class="search-field" onclick="toggleDropdown('locationDropdown')" id="locationField">
+                    <div class="location-label">Where</div>
+                    <div class="location-value" id="locationValue">Search locations</div>
+                    <div class="dropdown" id="locationDropdown">
+                        <input type="text" id="address" placeholder="Address">
+                        <input type="text" id="neighborhood" placeholder="Neighborhood">
+                        <button type="button" onclick="updateLocation()">Update</button>
+                    </div>
+                </div>
+                <div class="search-field" id="datesField">
+                    <div class="dates-label">When</div>
+                    <input type="text" id="dates" name="dates" placeholder="Add dates">
+                </div>
+                <div class="search-field">
+                    <label for="guests">Who</label>
+                    <input type="text" id="guests" name="guests" placeholder="Add guests">
+                </div>
+                <button type="submit" class="search-button"><span class="search-icon">&#128269;</span></button>
+            </form>
+        </div> -->
+        <div class="search-bar-container">
+            <form action="" class="search-bar-form">
+                <div class="search-field">
+                    <div id="location-label">Where</div>
+                    <div id="location-value">Search locations</div>
+                </div>
+                <div class="search-field">
+                    <div id="dates-label">When</div>
+                    <div id="dates-value">Add dates</div>
+                </div>
+                <div class="search-field">
+                    <div id="guests-label">Who</div>
+                    <div id="guests-value">Add guests</div>
+                </div>
+                <div>
+                    <button class="search-btn">
+                        <i class="fa-solid fa-magnifying-glass" id="search-magnifying-glass"></i>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </main>
+    <footer>
+
+    </footer>
+    <!-- Font Awesome Library -->
+    <script src="https://kit.fontawesome.com/e2ac5a529b.js" crossorigin="anonymous"></script>
+    <!-- Scripts -->
+    <script src="scripts/search-bar.js"></script>
 </body>
 
 </html>
