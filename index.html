@@ -11,9 +11,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
     <!-- Styling -->
+    <link rel="stylesheet" href="css/landing-page.css">
     <link rel="stylesheet" href="css/navigation-bar.css">
     <link rel="stylesheet" href="css/search-bar.css">
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/pop-up-windows.css">
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/signup.css">
+    <!-- JWT Decode Library -->
+    <script src="https://cdn.jsdelivr.net/npm/jwt-decode/build/jwt-decode.min.js"></script>
 </head>
 
 <body>
@@ -32,51 +37,38 @@
                     <a href="experiences.html" id="experiences-tab">Experiences</a>
                 </div>
                 <!-- rightmost tabs -->
-                <div class="left-most-tabs-container">
-                    <a href="host.html" id="flex-your-space-tab">Flex Your Space</a>
-                    <a href="signup.html" id="work-with-us-tab">
+                <div class="right-most-tabs-container">
+                    <a href="flex-your-space-dashboard.html" id="flex-your-space-tab">Flex Your Space</a>
+                    <button id="work-with-us-tab" onclick="toggleDropdown()">
                         &nbsp;<i class="fa-solid fa-bars"></i>
-                        &nbsp;&nbsp;Work With Us</a>
+                        &nbsp;&nbsp;Work With Us
+                    </button>
+                    <!-- work with us dropdown options -->
+                    <div class="work-with-us-dropdown-content" id="work-with-us-dropdown-content">
+                        <a href="#" id="login-btn">Log in</a><br>
+                        <a href="#" id="signup-btn">Sign up</a><br>
+                        <a href="flex-your-space-dashboard.html">Flex Your Space</a>
+                    </div>
                 </div>
             </div>
+
         </nav>
     </header>
 
     <main>
         <!-- search bar -->
-        <!-- <div class="search-bar-container">
-            <form action="/search" method="get" class="search-bar-form">
-                <div class="search-field" onclick="toggleDropdown('locationDropdown')" id="locationField">
-                    <div class="location-label">Where</div>
-                    <div class="location-value" id="locationValue">Search locations</div>
-                    <div class="dropdown" id="locationDropdown">
-                        <input type="text" id="address" placeholder="Address">
-                        <input type="text" id="neighborhood" placeholder="Neighborhood">
-                        <button type="button" onclick="updateLocation()">Update</button>
-                    </div>
-                </div>
-                <div class="search-field" id="datesField">
-                    <div class="dates-label">When</div>
-                    <input type="text" id="dates" name="dates" placeholder="Add dates">
-                </div>
-                <div class="search-field">
-                    <label for="guests">Who</label>
-                    <input type="text" id="guests" name="guests" placeholder="Add guests">
-                </div>
-                <button type="submit" class="search-button"><span class="search-icon">&#128269;</span></button>
-            </form>
-        </div> -->
         <div class="search-bar-container">
-            <form action="" class="search-bar-form">
-                <div class="search-field">
+            <!-- <form action="" class="search-bar-form"> -->
+            <div class="search-bar">
+                <div class="search-field" id="where-search-field">
                     <div id="location-label">Where</div>
                     <div id="location-value">Search locations</div>
                 </div>
-                <div class="search-field">
+                <div class="search-field" id="when-search-field">
                     <div id="dates-label">When</div>
                     <div id="dates-value">Add dates</div>
                 </div>
-                <div class="search-field">
+                <div class="search-field" id="who-search-field">
                     <div id="guests-label">Who</div>
                     <div id="guests-value">Add guests</div>
                 </div>
@@ -85,9 +77,62 @@
                         <i class="fa-solid fa-magnifying-glass" id="search-magnifying-glass"></i>
                     </button>
                 </div>
-            </form>
+            </div>
+            <!-- </form> -->
         </div>
     </main>
+
+    <!-- login pop up window -->
+    <div id="login-popup" class="popup hidden">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup('login-popup')">&times;</span>
+            <div class="container">
+                <p id="login-header">Log in or sign up</p>
+                <form id="login-form">
+                    <p id="welcome-header">Welcome to FlexWorkspace</p>
+                    <input type="email" id="login-email" name="email" placeholder="Email" required>
+                    <input type="password" id="login-password" name="password" placeholder="Password" required>
+                    <p id="terms-and-conditions">Terms and conditions</p>
+                    <button type="submit" id="login-button">Login</button>
+                    <div id="or-hr">
+                        <hr>
+                        <p>or</p>
+                        <hr>
+                    </div>
+                    <div class="sign-up-instead">Don't have an account yet?&nbsp;&nbsp;
+                        <a href="#" id="sign-up-instead-link">Sign up instead.</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- signup pop up window -->
+    <div id="signup-popup" class="popup hidden">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup('signup-popup')">&times;</span>
+            <div class="container">
+                <p id="signup-header">Log in or sign up</p>
+                <form id="signup-form">
+                    <p id="welcome-header">Welcome to FlexWorkspace</p>                    
+                    <input type="text" id="signup-name" name="name" placeholder="Name" required>
+                    <input type="email" id="signup-email" name="email" placeholder="Email" required>
+                    <input type="password" id="signup-password" name="password" placeholder="Password" required>
+                    <!-- <select id="signup-role" name="role" required>
+                        <option value="" disabled selected>Select role</option>
+                        <option value="host">Host</option>
+                        <option value="guest">Guest</option>
+                    </select> -->
+                    <p id="terms-and-conditions">Terms and conditions</p>
+                    <button type="submit" id="signup-button">Sign Up</button>
+                    <div class="log-in-instead">Already have an account?&nbsp;&nbsp;
+                        <a href="#" id="log-in-instead-link">Log in instead.</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
     <footer>
 
     </footer>
@@ -95,6 +140,10 @@
     <script src="https://kit.fontawesome.com/e2ac5a529b.js" crossorigin="anonymous"></script>
     <!-- Scripts -->
     <script src="scripts/search-bar.js"></script>
+    <script src="scripts/work-with-us.js"></script>
+    <script src="scripts/auth.js"></script>
+    <script src="scripts/pop-up-window.js"></script>
+    <script src="scripts/signup.js"></script>
 </body>
 
 </html>

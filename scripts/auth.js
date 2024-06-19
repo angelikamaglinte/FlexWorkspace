@@ -5,8 +5,8 @@ document.addEventListener('DOMContentLoaded', function () {
     loginForm.addEventListener('submit', async function (event) {
         event.preventDefault();
 
-        const email = document.getElementById('email').value;
-        const password = document.getElementById('password').value;
+        const email = document.getElementById('login-email').value;
+        const password = document.getElementById('login-password').value;
 
         try {
 
@@ -42,16 +42,20 @@ document.addEventListener('DOMContentLoaded', function () {
                 console.log(decodedToken); // Log the decoded token to check its structure
                 localStorage.setItem('userId', decodedToken.user.id);
 
-                // Redirect based on user role
-                const userRole = decodedToken.user.role;
-                if (userRole === 'host') {
-                    window.location.href = 'dashboard-host.html'; // Redirect to host dashboard
-                } else if (userRole === 'guest') {
-                    window.location.href = 'dashboard-guest.html'; // Redirect to guest dashboard
-                } else {
-                    // Handle invalid role or other cases
-                    alert('Invalid user role');
-                }
+                window.location.href = 'flex-workspace-dashboard.html';
+
+                // commenting this out to exclude redirecting page based on role - START
+                // // Redirect based on user role
+                // const userRole = decodedToken.user.role;
+                // if (userRole === 'host') {
+                //     window.location.href = 'host.html'; // Redirect to host dashboard
+                // } else if (userRole === 'guest') {
+                //     window.location.href = 'guest.html'; // Redirect to guest dashboard
+                // } else {
+                //     // Handle invalid role or other cases
+                //     alert('Invalid user role');
+                // }
+                // commenting this out to exclude redirecting page based on role - END
 
                 // Fetch user information after successful login
                 // fetchUserInfo();

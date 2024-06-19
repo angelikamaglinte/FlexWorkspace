@@ -12,6 +12,11 @@
         rel="stylesheet">
     <!-- Styling -->
     <link rel="stylesheet" href="css/experiences-page.css">
+    <link rel="stylesheet" href="css/navigation-bar.css">
+    <link rel="stylesheet" href="css/search-bar.css">
+    <link rel="stylesheet" href="css/pop-up-windows.css">
+    <!-- JWT Decode Library -->
+    <script src="https://cdn.jsdelivr.net/npm/jwt-decode/build/jwt-decode.min.js"></script>
 </head>
 
 <body>
@@ -27,29 +32,107 @@
                 <!-- center tabs -->
                 <div class="center-tabs-container">
                     <a href="index.html" id="workspaces-tab">Workspaces</a>
-                    <a href="experiences.html" id="experiences-tab">Experiences</a>
+                    <a href="#" id="experiences-tab">Experiences</a>
                 </div>
                 <!-- rightmost tabs -->
                 <div class="left-most-tabs-container">
                     <a href="host.html" id="flex-your-space-tab">Flex Your Space</a>
-                    <a href="signup.html" id="work-with-us-tab">
+                    <button id="work-with-us-tab" onclick="toggleDropdown()">
                         &nbsp;<i class="fa-solid fa-bars"></i>
-                        &nbsp;&nbsp;Work With Us</a>
+                        &nbsp;&nbsp;Work With Us
+                    </button>
+                    <!-- work with us dropdown options -->
+                    <div class="work-with-us-dropdown-content" id="work-with-us-dropdown-content">
+                        <a href="#" id="loginBtn">Log in</a><br>
+                        <a href="#" id="signupBtn">Sign up</a><br>
+                        <a href="host.html">Flex Your Space</a>
+                    </div>
                 </div>
             </div>
+
         </nav>
     </header>
 
     <main>
-        
+        <!-- search bar -->
+        <div class="search-bar-container">
+            <!-- <form action="" class="search-bar-form"> -->
+            <div class="search-bar">
+                <div class="search-field" id="where-search-field">
+                    <div id="location-label">Where</div>
+                    <div id="location-value">Search locations</div>
+                </div>
+                <div class="search-field" id="when-search-field">
+                    <div id="dates-label">When</div>
+                    <div id="dates-value">Add dates</div>
+                </div>
+                <div class="search-field" id="who-search-field">
+                    <div id="guests-label">Who</div>
+                    <div id="guests-value">Add guests</div>
+                </div>
+                <div>
+                    <button class="search-btn">
+                        <i class="fa-solid fa-magnifying-glass" id="search-magnifying-glass"></i>
+                    </button>
+                </div>
+            </div>
+            <!-- </form> -->
+        </div>
     </main>
+
+    <!-- login pop up window -->
+    <div id="loginPopup" class="popup hidden">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup('loginPopup')">&times;</span>
+            <div class="container">
+                <h2>Login</h2>
+                <form id="login-form">
+                    <label for="email">Emailas:</label>
+                    <input type="email" id="login-email" name="email" placeholder="Email" required>
+                    <label for="password">Password:</label>
+                    <input type="password" id="login-password" name="password" placeholder="Password">
+                    <button type="submit">Login</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- signup pop up window -->
+    <div id="signupPopup" class="popup hidden">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup('signupPopup')">&times;</span>
+            <div class="container">
+                <h2>Sign Up</h2>
+                <form id="signup-form">
+                    <label for="name">Name:</label>
+                    <input type="text" id="signup-name" name="name" required>
+                    <label for="email">Email:</label>
+                    <input type="email" id="signup-email" name="email" required>
+                    <label for="password">Password:</label>
+                    <input type="password" id="signup-password" name="password" required>
+                    <label for="role">Role:</label>
+                    <select id="signup-role" name="role" required>
+                        <option value="host">Host</option>
+                        <option value="guest">Guest</option>
+                    </select>
+                    <button type="submit">Sign Up</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
     <footer>
 
     </footer>
+
     <!-- Font Awesome Library -->
     <script src="https://kit.fontawesome.com/e2ac5a529b.js" crossorigin="anonymous"></script>
     <!-- Scripts -->
     <script src="scripts/search-bar.js"></script>
+    <script src="scripts/work-with-us.js"></script>
+    <script src="scripts/auth.js"></script>
+    <script src="scripts/pop-up-window.js"></script>
+    <script src="scripts/signup.js"></script>
 </body>
 
 </html>

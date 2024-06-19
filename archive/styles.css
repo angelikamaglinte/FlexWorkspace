@@ -134,8 +134,8 @@ a {
 .searchBar {
     border: solid lightgrey 1px;
     border-radius: 50px;
-    width: 25%;
-    margin: auto;
+    /* width: 50%; */
+    /* margin: auto; */
 }
 
 .btn {

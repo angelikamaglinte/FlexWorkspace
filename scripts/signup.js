@@ -4,10 +4,10 @@ document.addEventListener('DOMContentLoaded', function () {
     signupForm.addEventListener('submit', async function (event) {
         event.preventDefault();
 
-        const name = document.getElementById('name').value;
-        const email = document.getElementById('email').value;
-        const password = document.getElementById('password').value;
-        const role = document.getElementById('role').value; // Capture selected role
+        const name = document.getElementById('signup-name').value;
+        const email = document.getElementById('signup-email').value;
+        const password = document.getElementById('signup-password').value;
+        // const role = document.getElementById('signup-role').value; // Capture selected role
 
         try {
             const response = await fetch('https://flexworkspace-backend.onrender.com/api/auth/register', {
@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     name: name,
                     email: email,
                     password: password,
-                    role: role // Include selected role in request body
+                    // role: role // Include selected role in request body
                 })
             });
 
@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             if (response.ok) {
                 // Signup successful, redirect to login page
-                window.location.href = 'login.html'; // Redirect to login page
+                window.location.href = 'index.html'; // Redirect to login page
             } else {
                 // Signup failed, display error message
                 alert(data.msg);

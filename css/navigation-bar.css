@@ -1,13 +1,4 @@
-* {
-    font-family: "Inter";
-    
-}
-
-a {
-    text-decoration: none;
-}
-
-/**************************************************** Header Styling ****************************************************/
+/**************************************************** Navigation Bar ****************************************************/
 header {
     margin-top: 1%;
     margin-left: 1%;
@@ -49,10 +40,11 @@ header {
     text-decoration: none solid white;
     cursor: pointer;
     position: relative;
+    border: none;
 }
 
-#workspaces-tab {
-    font-weight: bold;
+#work-with-us-tab {
+    font-size: medium;
 }
 
 #work-with-us-tab {
@@ -61,55 +53,29 @@ header {
     border-radius: 50px;
 }
 
-
-/**************************************************** Main Styling ****************************************************/
-main {
-    margin-top: 3%;
-}
-/* Search Bar */
-.search-bar-container {
-    display: flex;
-    justify-content: center;
-    margin: 20px 0;
-}
-
-.search-bar-form {
-    display: flex;
-    align-items: center;
-    background-color: #fff;
-    border-radius: 50px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0);
-    padding: 10px;
-    position: relative;
-    border: 1px solid lightgray;
+.work-with-us-dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 180px;
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    margin-left: 6.5%;
+    margin-top: 1%;
+    border-radius: 10px;
 }
 
-.search-field {
-    margin: 0 50px;
-    /* text-align: center; */
-    position: relative;
+.work-with-us-dropdown-content a {   
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
 }
 
-#location-label, #dates-label, #guests-label {
-    font-weight: bold;
-}
-
-#search-magnifying-glass {
+.work-with-us-dropdown-content a:hover {
     background-color: #EEEEEE;
+    border-radius: 10px;
 }
-
-.search-btn {
-    background-color: #EEEEEE;
-    border: none;
-    border-radius: 50px; 
-    padding: 8px 12px;
-    cursor: pointer;
-    font-size: 22px;
-    margin-left: 44px;
-}
-
-/**************************************************** Footer Styling ****************************************************/
-
 
 /**************************************************** Navigation Bar Animation ****************************************************/
 #workspaces-tab, #experiences-tab, #flex-your-space-tab {

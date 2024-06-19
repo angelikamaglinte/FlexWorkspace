@@ -1,0 +1,96 @@
+.popup-content {
+    border-radius: 10px;
+    width: 35%;
+    height: 50%;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 0px;
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.1);
+}
+
+#login-header {
+    font-size: medium;
+    font-weight: 600;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    margin: 10 auto;
+    margin-left: 50px;
+}
+
+#login-form {
+    border-top: 1px solid #333;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 20px;
+}
+
+#welcome-header {
+    font-size: 22px;
+    font-weight: 600;
+}
+
+input[type="email"], input[type="password"] {
+    width: 96.5%;
+    padding: 10px;
+    border-radius: 10px;
+    border: 0.5px solid #aaa;
+    margin-bottom: 2%;
+    font-size: medium;
+    /* box-shadow: 0 0 9px 10px rgba(0, 0, 0, 0.1); */
+    text-decoration: none;
+}
+
+#login-button {
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #aaa;
+    margin-bottom: 2%;
+    font-size: medium;
+    box-shadow: 0 0 9px 1px rgba(0, 0, 0, 0.1);
+    background-color: #000000;
+    color: white;
+    cursor: pointer;
+}
+
+#terms-and-conditions {
+    text-decoration: underline;
+    font-size: small;
+    color: #000000;
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+#or-hr {
+    display: flex;
+    text-align: center;
+    margin: 5px;
+}
+
+#or-hr p {
+    margin-top: 0px;
+}
+
+hr {
+    width: 47%;
+    height: 1%;
+    margin-top: 10px;
+}
+
+.sign-up-instead {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #000000;
+    margin: 20px auto; 
+    text-align: center;
+}
+
+#sign-up-instead-link {
+    /* margin: 0; */
+    /* padding: 0; */
+    text-decoration: underline;
+    color: #000000;
+    font-weight: 500;
+}
