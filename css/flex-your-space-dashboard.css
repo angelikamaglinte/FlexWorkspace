@@ -1,0 +1,101 @@
+/**************************************************** Universal Styling ****************************************************/
+* {
+    font-family: "Inter";
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* margin: 0 auto; */
+    max-width: 2000px;
+    /* padding: 0 2%; */
+}
+
+/**************************************************** Main-01 Styling ****************************************************/
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 5% 0;
+    margin-top: 1.5%;
+}
+
+.main-container-01 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    /* width: 100%; */
+    /* flex-wrap: wrap; */
+}
+
+.welcome-to-flex-workspace {
+    position: absolute;
+    top: 40%;
+    left: 35%;
+}
+
+.image-01-container {
+    flex: 1;
+    text-align: center;
+    margin: 10px;
+}
+
+.image-container img {
+    position: absolute;
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+}
+
+.tagline-01-container {
+    flex: 1;
+    margin: 10px;
+    margin-top: 23%;
+}
+
+.start-now-btn {
+    position: absolute;
+    top: 50%; /* Adjust this value as needed */
+    left: 43.5%;
+    transform: translate(-50%, -50%);
+}
+
+.start-now-btn img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/**************************************************** Main-02 Styling ****************************************************/
+.main-container-02 {
+    background-color: #EEEEEE;
+    width: 100%;
+    margin-top: 5%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.image-02-container {
+    margin-top: 5%;
+    margin-right: 2.5%;
+    margin-bottom: 5%;
+}
+
+.tagline-02-container {
+    margin-left: 2.5%;
+}
+
+
+/**************************************************** Responsive Design ****************************************************/
+@media (max-width: 768px) {
+    .main-container {
+        flex-direction: column;
+    }
+
+}

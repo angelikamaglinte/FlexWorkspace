@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Website</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <!-- Styling -->
+    <style>
+        /**************************************************** Universal Styling ****************************************************/
+        * {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0 auto;
+            max-width: 1200px;
+            padding: 0 2%;
+        }
+
+        header {
+            background-color: #333;
+            padding: 1% 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .navigation-bar-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        #logo {
+            max-width: 150px;
+            height: auto;
+            cursor: pointer;
+        }
+
+        .navigation-tabs-container {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-tab {
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .nav-tab:hover {
+            background-color: #555;
+        }
+
+        /**************************************************** Main Styling ****************************************************/
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 5% 0;
+        }
+
+        .main-container {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            flex-wrap: wrap;
+        }
+
+        .image-container {
+            flex: 1;
+            text-align: center;
+            margin: 10px;
+        }
+
+        .image-container img {
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+        }
+
+        .tagline-container {
+            flex: 1;
+            margin: 10px;
+        }
+
+        .tagline-container h1 {
+            font-size: 2em;
+            margin-bottom: 0.5em;
+        }
+
+        .tagline-container span {
+            font-style: italic;
+        }
+
+        .tagline-container p {
+            font-size: 1.2em;
+            margin-bottom: 1em;
+        }
+
+        .cta-button {
+            background-color: #333;
+            color: white;
+            border: none;
+            padding: 1em 2em;
+            border-radius: 50px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            bottom: 50%;
+        }
+
+        .cta-button:hover {
+            background-color: #555;
+        }
+
+        /**************************************************** Footer Styling ****************************************************/
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1em 0;
+            margin-top: 5%;
+        }
+
+        /**************************************************** Responsive Design ****************************************************/
+        @media (max-width: 768px) {
+            .main-container {
+                flex-direction: column;
+            }
+
+            .tagline-container h1 {
+                font-size: 1.5em;
+            }
+
+            .tagline-container p {
+                font-size: 1em;
+            }
+
+            .cta-button {
+                font-size: 0.8em;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="navigation-bar-container">
+                <!-- Logo -->
+                <div class="logo-container">
+                    <a href="#">
+                        <img src="https://via.placeholder.com/150" alt="Logo" id="logo">
+                    </a>
+                </div>
+                <!-- Navigation Tabs -->
+                <div class="navigation-tabs-container">
+                    <a href="#" class="nav-tab">Home</a>
+                    <a href="#" class="nav-tab">About</a>
+                    <a href="#" class="nav-tab">Services</a>
+                    <a href="#" class="nav-tab">Contact</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="main-container">
+            <!-- Image 01 -->
+            <div class="image-container">
+                <img src="https://via.placeholder.com/600x400" alt="Image 01">
+            </div>
+            <!-- Tagline -->
+            <div class="tagline-container">
+                <h1>Experience the <span>future</span> of web design.</h1>
+                <p>Responsive design ensures your site looks great on any device.</p>
+                <button class="cta-button">Learn More</button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Responsive Website. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,39 +11,61 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
     <!-- Styling -->
-    <link rel="stylesheet" href="css/navigation-bar.css">
-    <link rel="stylesheet" href="css/flex-your-space.css">
+    <link rel="stylesheet" href="css/flex-your-space-dashboard.css">
+    <link rel="stylesheet" href="css/flex-your-space-navigation-bar.css">
 </head>
+
 <body>
     <header>
         <nav>
             <div class="navigation-bar-container">
                 <!-- logo -->
                 <div class="logo-container">
-                    <a href="#">
-                        <img src="images/logos/FlexWorkspace-black.png" alt="FlexWorkspace logo" id="FlexWorkspaceLogo">
+                    <a href="index.html">
+                        <img src="images/logos/FlexWorkspace-black-thin.png" alt="FlexWorkspace logo"
+                            id="FlexWorkspaceLogo">
                     </a>
                 </div>
                 <!-- rightmost tabs -->
                 <div class="right-most-tabs-container">
-                    <a href="flex-your-space-dashboard.html" id="flex-your-space-tab">Flex Your Space</a>
-                    <button id="work-with-us-tab" onclick="toggleDropdown()">
-                        &nbsp;<i class="fa-solid fa-bars"></i>
-                        &nbsp;&nbsp;Work With Us
+                    <a href="flex-your-space-dashboard.html" id="flex-your-space-tab">Ready to flex your space?</a>
+                    <button id="set-up-space-tab">
+                        <a href="flex-workspace-dashboard.html">Set Up Space</a>
                     </button>
-                    <!-- work with us dropdown options -->
-                    <div class="work-with-us-dropdown-content" id="work-with-us-dropdown-content">
-                        <a href="#" id="login-btn">Log in</a><br>
-                        <a href="#" id="signup-btn">Sign up</a><br>
-                        <a href="flex-your-space-dashboard.html">Flex Your Space</a>
-                    </div>
                 </div>
             </div>
-
         </nav>
     </header>
-    <main>
 
+    <main>
+        <div class="main-container-01">
+            <!-- Tagline 01 - Experience the future of workspaces. -->
+            <div class="tagline-01-container">
+                <div class="welcome-to-flex-workspace">
+                    <img src="images/flex-your-space-dashboard/Welcome to FlexWorkspace.png" alt="Welcome to FlexWorkspace">
+                </div>
+                <img src="images/flex-your-space-dashboard/Experience the future of workspaces..png" alt="Experience the future of workspaces.">
+                <!-- Start Now Button -->
+                <div class="start-now-btn">
+                    <a href="flex-workspace-dashboard.html" id="start-now-btn">
+                        <img src="images/buttons/Start Now Button.png">
+                    </a>
+                </div>
+            </div>
+            <!-- Image 01 - left side -->
+            <div class="image-01-container">
+                <img src="images/flex-your-space-dashboard/image-01.png" alt="Image 01">
+            </div>
+        </div>
+
+        <div class="main-container-02">
+            <div class="image-02-container">
+                <img src="images/flex-your-space-dashboard/image-02.png" alt="Image 02">
+            </div>
+            <div class="tagline-02-container">
+                <img src="images/flex-your-space-dashboard/Turn your space into opportunity. Flex it..png" alt="">
+            </div>
+        </div>
     </main>
     <footer>
 
@@ -50,4 +73,5 @@
     <!-- Font Awesome Library -->
     <script src="https://kit.fontawesome.com/e2ac5a529b.js" crossorigin="anonymous"></script>
 </body>
+
 </html>

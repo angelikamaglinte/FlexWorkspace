@@ -1,0 +1,73 @@
+/**************************************************** Navigation Bar ****************************************************/
+header {
+    margin-top: 1%;
+    margin-left: 14%;
+    margin-right: 14%;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+.navigation-bar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#FlexWorkspaceLogo {
+    max-width: 250px;
+    height: auto;
+    cursor: pointer;
+}
+
+.rightmost-tabs-container {
+    display: flex;
+    gap: 20px;
+}
+
+#flex-your-space-tab {
+    margin-right: 20px;
+}
+
+#flex-your-space-tab {
+    color: black;
+    text-transform: none;
+    text-decoration: none solid white;
+    cursor: default;
+    position: relative;
+    border: none;
+}
+
+#set-up-space-tab {
+    color: white;
+    text-transform: none;
+    text-decoration: none solid white;
+    cursor: pointer;
+    position: relative;
+    border: none;
+}
+
+#set-up-space-tab {
+    font-size: medium;
+    background-color: black;
+    padding: 15px;
+    border-radius: 50px;
+}
+
+/**************************************************** Responsive Design ****************************************************/
+@media (max-width: 768px) {
+    .navigation-bar-container {
+        
+    }
+
+    .right-most-tabs-container {
+        margin-top: 10px;
+        flex-direction: column;
+    }
+
+    .right-most-tabs-container a {
+        margin: 5px 0;
+    }
+}
