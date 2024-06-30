@@ -31,6 +31,7 @@ async function loadProperties() {
     } catch (error) {
         console.error('Error:', error);
         alert('An error occurred while fetching properties.');
+        
     }
 }
 

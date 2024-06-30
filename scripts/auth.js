@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 console.log(decodedToken); // Log the decoded token to check its structure
                 localStorage.setItem('userId', decodedToken.user.id);
 
-                window.location.href = 'flex-workspace-dashboard.html';
+                window.location.href = 'index.html';
 
                 // commenting this out to exclude redirecting page based on role - START
                 // // Redirect based on user role
@@ -68,6 +68,8 @@ document.addEventListener('DOMContentLoaded', function () {
             alert('An error occurred. Please try again.');
         }
     });
+
+    
 
     // // Function to fetch user information and display user name
     // async function fetchUserInfo() {

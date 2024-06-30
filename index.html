@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="css/pop-up-windows.css">
     <link rel="stylesheet" href="css/login.css">
     <link rel="stylesheet" href="css/signup.css">
+    <link rel="stylesheet" href="css/logout.css">
     <!-- JWT Decode Library -->
     <script src="https://cdn.jsdelivr.net/npm/jwt-decode/build/jwt-decode.min.js"></script>
 </head>
@@ -28,7 +29,8 @@
                 <!-- logo (left-most) -->
                 <div class="logo-container">
                     <a href="#">
-                        <img src="images/logos/FlexWorkspace-black-thin.png" alt="FlexWorkspace logo" id="FlexWorkspaceLogo">
+                        <img src="images/logos/FlexWorkspace-black-thin.png" alt="FlexWorkspace logo"
+                            id="FlexWorkspaceLogo">
                     </a>
                 </div>
                 <!-- center tabs -->
@@ -48,6 +50,7 @@
                         <a href="#" id="login-btn">Log in</a><br>
                         <a href="#" id="signup-btn">Sign up</a><br>
                         <a href="flex-your-space-dashboard.html">Flex Your Space</a>
+                        <a href="#" id="logout-btn" class="hidden">Log out</a>
                     </div>
                 </div>
             </div>
@@ -85,7 +88,7 @@
     <!-- login pop up window -->
     <div id="login-popup" class="popup hidden">
         <div class="popup-content">
-            <span class="close" onclick="closePopup('login-popup')">&times;</span>
+            <span class="close">&times;</span>
             <div class="container">
                 <p id="login-header">Log in or sign up</p>
                 <form id="login-form">
@@ -110,19 +113,14 @@
     <!-- signup pop up window -->
     <div id="signup-popup" class="popup hidden">
         <div class="popup-content">
-            <span class="close" onclick="closePopup('signup-popup')">&times;</span>
+            <span class="close">&times;</span>
             <div class="container">
                 <p id="signup-header">Log in or sign up</p>
                 <form id="signup-form">
-                    <p id="welcome-header">Welcome to FlexWorkspace</p>                    
+                    <p id="welcome-header">Welcome to FlexWorkspace</p>
                     <input type="text" id="signup-name" name="name" placeholder="Name" required>
                     <input type="email" id="signup-email" name="email" placeholder="Email" required>
                     <input type="password" id="signup-password" name="password" placeholder="Password" required>
-                    <!-- <select id="signup-role" name="role" required>
-                        <option value="" disabled selected>Select role</option>
-                        <option value="host">Host</option>
-                        <option value="guest">Guest</option>
-                    </select> -->
                     <p id="terms-and-conditions">Terms and conditions</p>
                     <button type="submit" id="signup-button">Sign Up</button>
                     <div class="log-in-instead">Already have an account?&nbsp;&nbsp;
@@ -132,6 +130,52 @@
             </div>
         </div>
     </div>
+
+    <!-- login pop up window -->
+    <!-- <div id="login-popup" class="popup hidden">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup('login-popup')">&times;</span>
+            <div class="container">
+                <p id="login-header">Log in or sign up</p>
+                <form id="login-form">
+                    <p id="welcome-header">Welcome to FlexWorkspace</p>
+                    <input type="email" id="login-email" name="email" placeholder="Email" required>
+                    <input type="password" id="login-password" name="password" placeholder="Password" required>
+                    <p id="terms-and-conditions">Terms and conditions</p>
+                    <button type="submit" id="login-button">Login</button>
+                    <div id="or-hr">
+                        <hr>
+                        <p>or</p>
+                        <hr>
+                    </div>
+                    <div class="sign-up-instead">Don't have an account yet?&nbsp;&nbsp;
+                        <a href="#" id="sign-up-instead-link">Sign up instead.</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div> -->
+
+    <!-- signup pop up window -->
+    <!-- <div id="signup-popup" class="popup hidden">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup('signup-popup')">&times;</span>
+            <div class="container">
+                <p id="signup-header">Log in or sign up</p>
+                <form id="signup-form">
+                    <p id="welcome-header">Welcome to FlexWorkspace</p>                    
+                    <input type="text" id="signup-name" name="name" placeholder="Name" required>
+                    <input type="email" id="signup-email" name="email" placeholder="Email" required>
+                    <input type="password" id="signup-password" name="password" placeholder="Password" required>
+                    <p id="terms-and-conditions">Terms and conditions</p>
+                    <button type="submit" id="signup-button">Sign Up</button>
+                    <div class="log-in-instead">Already have an account?&nbsp;&nbsp;
+                        <a href="#" id="log-in-instead-link">Log in instead.</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div> -->
 
     <footer>
 
