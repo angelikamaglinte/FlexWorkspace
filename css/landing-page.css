@@ -18,6 +18,26 @@ main {
     margin-top: 3%;
 }
 
+#properties-container {
+    padding: 20px;
+}
+
+.workspace {
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+.workspace h3 {
+    margin: 0;
+    font-size: 1.2em;
+}
+
+.workspace p {
+    margin: 5px 0;
+}
+
+
 /**************************************************** Footer Styling ****************************************************/
 
 /**************************************************** Navigation Bar Animation ****************************************************/
