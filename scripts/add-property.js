@@ -6,7 +6,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
         const address = document.getElementById('address').value;
         const neighborhood = document.getElementById('neighborhood').value;
+        const city = document.getElementById('city').value;
+        const province = document.getElementById('province').value;
+        const workspaceType = document.getElementById('workspaceType').value;
         const squareFeet = document.getElementById('square-feet').value;
+        const leaseTerm = document.getElementById('leaseTerm').value;
+        const price = document.getElementById('price').value;
         const parkingGarage = document.getElementById('parking-garage').checked;
         const publicTransport = document.getElementById('public-transport').checked;
 
@@ -22,7 +27,12 @@ document.addEventListener('DOMContentLoaded', function () {
                 body: JSON.stringify({
                     address,
                     neighborhood,
+                    city,
+                    province,
+                    workspaceType, 
                     squareFeet,
+                    leaseTerm,
+                    price,
                     parkingGarage,
                     publicTransport
                 })
@@ -46,4 +56,3 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 });
-

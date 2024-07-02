@@ -1,51 +1,168 @@
-// display-properties.js
-
-document.addEventListener('DOMContentLoaded', async function () {
+async function fetchProperties() {
     const propertiesContainer = document.getElementById('properties-container');
-    
-    // Fetch workspaces when the document is loaded
-    await fetchWorkspaces(propertiesContainer);
-});
-
-async function fetchWorkspaces(container) {
-    // Set up the URL for fetching properties
-    const url = 'https://flexworkspace-backend.onrender.com/api/property';
+    const modal = document.getElementById('property-modal');
+    const modalContent = document.getElementById('modal-property-details');
+    const closeModal = document.querySelector('.close');
 
     try {
-        // Fetch properties from the backend
-        const response = await fetch(url, {
+        const response = await fetch('https://flexworkspace-backend.onrender.com/api/properties', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
-                // No token needed here, since this is for displaying all properties
             }
         });
 
-        // Parse the JSON response
         const data = await response.json();
 
         if (response.ok) {
-            // Clear any existing content
-            container.innerHTML = '';
-
-            // Populate the container with properties
+            // Update DOM to display properties as cards
+            propertiesContainer.innerHTML = ''; // Clear previous properties
             data.forEach(property => {
-                const propertyElement = document.createElement('div');
-                propertyElement.classList.add('property-item');
-                propertyElement.innerHTML = `
-                    <h3>${property.title}</h3>
-                    <p>Address: ${property.address}</p>
-                    <p>Neighborhood: ${property.neighborhood}</p>
-                    <p>Square Feet: ${property.squareFeet}</p>
+                const propertyCard = document.createElement('div');
+                propertyCard.className = 'property-card';
+                propertyCard.innerHTML = `
+                    <p>${property.city}, ${property.province}</p>
+                    <p>${property.workspaceType}</p>
+                    <p>$${property.price} per ${property.leaseTerm}</p>
                 `;
-                container.appendChild(propertyElement);
+
+                // Add click event to open the modal with property details
+                propertyCard.addEventListener('click', () => {
+                    showModal(property);
+                });
+
+                propertiesContainer.appendChild(propertyCard);
             });
         } else {
-            console.error('Error fetching workspaces:', data.message);
-            container.innerHTML = '<p>Failed to load workspaces.</p>';
+            // Handle error response
+            console.error('Error fetching properties:', data.message);
         }
     } catch (error) {
         console.error('Error:', error);
-        container.innerHTML = '<p>An error occurred while fetching workspaces.</p>';
+        alert('An error occurred while fetching properties.');
     }
+
+    // Function to show the modal with property details
+    function showModal(property) {
+        modalContent.innerHTML = `
+            <p>Address: ${property.address}</p>
+            <p>Neighborhood: ${property.neighborhood}</p>
+            <p>City: ${property.city}</p>
+            <p>Province: ${property.province}</p>
+            <p>Workspace Type: ${property.workspaceType}</p>
+            <p>Square Feet: ${property.squareFeet}</p>
+            <p>Parking Garage Included: ${property.parkingGarage ? 'Yes' : 'No'}</p>
+            <p>Near Public Transportation: ${property.publicTransport ? 'Yes' : 'No'}</p>
+        `;
+        modal.style.display = 'block';
+    }
+
+    // Close modal when user clicks on the close button
+    // if (closeModal) {
+    //     closeModal.addEventListener('click', function () {
+    //         modal.style.display = 'none';
+    //     });
+    // } else {
+    //     console.error('Close button not found.');
+    // }
+
+    const close = document.querySelectorAll('.close');
+    close.forEach(function (button) {
+        button.addEventListener('click', function() {
+            const modal = this.parentElement.parentElement;
+            modal.style.display = 'none';
+        })
+    });
+
+    // Close modal when user clicks outside of the modal
+    window.addEventListener('click', function (event) {
+        if (event.target == modal) {
+            modal.style.display = 'none';
+        }
+    });
 }
+
+// Call fetchProperties function when the DOM content is loaded
+document.addEventListener('DOMContentLoaded', function () {
+    fetchProperties(); // Initial load of properties
+});
+
+
+// // display-properties.js
+
+// async function fetchProperties() {
+//     const propertiesContainer = document.getElementById('properties-container');
+//     const modal = document.getElementById('property-modal');
+//     const modalContent = document.getElementById('modal-property-details');
+
+//     // Function to show the modal with property details
+//     function showModal(property) {
+//         modalContent.innerHTML = `
+//             <p>Address: ${property.address}</p>
+//             <p>Neighborhood: ${property.neighborhood}</p>
+//             <p>City: ${property.city}</p>
+//             <p>Province: ${property.province}</p>
+//             <p>Workspace Type: ${property.workspaceType}</p>
+//             <p>Square Feet: ${property.squareFeet}</p>
+//             <p>Parking Garage Included: ${property.parkingGarage ? 'Yes' : 'No'}</p>
+//             <p>Near Public Transportation: ${property.publicTransport ? 'Yes' : 'No'}</p>
+//         `;
+//         modal.style.display = 'block';
+
+//         // Add event listener to close button inside showModal function
+//         const closeModal = document.querySelector('.close');
+//         closeModal.onclick = function () {
+//             modal.style.display = 'none';
+//         }
+        
+//         // Close modal when user clicks outside of the modal
+//         window.onclick = function (event) {
+//             if (event.target == modal) {
+//                 modal.style.display = 'none';
+//             }
+//         }
+//     }
+//     try {
+//         const response = await fetch('https://flexworkspace-backend.onrender.com/api/properties', {
+//             method: 'GET',
+//             headers: {
+//                 'Content-Type': 'application/json'
+//             }
+//         });
+
+//         const data = await response.json();
+
+//         if (response.ok) {
+//             // Update DOM to display properties as cards
+//             propertiesContainer.innerHTML = ''; // Clear previous properties
+//             data.forEach(property => {
+//                 const propertyCard = document.createElement('div');
+//                 propertyCard.className = 'property-card';
+//                 propertyCard.innerHTML = `
+//                     <p>${property.city}, ${property.province}</p>
+//                     <p>${property.workspaceType}</p>
+//                     <p>$${property.price} per ${property.leaseTerm}</p>
+                    
+//                 `;
+
+//                 // Add click event to open the modal with property details
+//                 propertyCard.addEventListener('click', () => {
+//                     showModal(property);
+//                 });
+
+//                 propertiesContainer.appendChild(propertyCard);
+//             });
+//         } else {
+//             // Handle error response
+//             console.error('Error fetching properties:', data.message);
+//         }
+//     } catch (error) {
+//         console.error('Error:', error);
+//         alert('An error occurred while fetching properties.');
+//     }
+// }
+
+// // Call fetchProperties function when the DOM content is loaded
+// document.addEventListener('DOMContentLoaded', function () {
+//     fetchProperties(); // Initial load of properties
+// });

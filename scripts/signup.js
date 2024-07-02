@@ -4,7 +4,8 @@ document.addEventListener('DOMContentLoaded', function () {
     signupForm.addEventListener('submit', async function (event) {
         event.preventDefault();
 
-        const name = document.getElementById('signup-name').value;
+        const firstName = document.getElementById('signup-firstname').value;
+        const lastName = document.getElementById('signup-lastname').value;
         const email = document.getElementById('signup-email').value;
         const password = document.getElementById('signup-password').value;
         // const role = document.getElementById('signup-role').value; // Capture selected role
@@ -16,7 +17,9 @@ document.addEventListener('DOMContentLoaded', function () {
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify({
-                    name: name,
+                    // name: name,
+                    firstName: firstName,
+                    lastName: lastName,
                     email: email,
                     password: password,
                     // role: role // Include selected role in request body
